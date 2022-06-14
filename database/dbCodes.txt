@@ -1,0 +1,2 @@
+
+create table users( id int(11) not null PRIMARY KEY AUTO_INCREMENT, uid TINYTEXT not null, emailUser TINYTEXT not null, pwdUser LONGTEXT not null );
