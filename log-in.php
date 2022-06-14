@@ -10,21 +10,16 @@
 </head>
 
 <body>
-    <!-- Login form -->
+    <!-- login form -->
     <section class="vh-100">
         <div class="container py-5 h-100">
             <div class="row d-flex align-items-center justify-content-center h-100">
                 <div class="col-md-8 col-lg-7 col-xl-6">
-                    <!-- Top image -->
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+                    <!-- top image -->
+                    <img src="./images/Logo.png"
                         class="img-fluid" alt="Phone image">
                 </div>
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-
-                    <div class="divider d-flex align-items-center my-4">
-                        <h1 class="text-center fw-bold mx-3 mb-0 text-muted">Create new account</h1>
-                    </div>
-
                     <form>
                         <!-- Email input -->
                         <div class="form-outline mb-4">
@@ -39,7 +34,14 @@
                         </div>
 
                         <!-- Submit button -->
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">Sing Up</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Log In</button>
+
+                        <div class="divider d-flex align-items-center my-4">
+                            <p class="text-center fw-bold mx-3 mb-0 text-muted">Create new account</p>
+                        </div>
+
+                        <!-- Sing Up -->
+                        <button type="submit" class="btn btn-lg btn-block"><a href="sing-up.html" >Sing Up</a></button>
 
                     </form>
                 </div>
