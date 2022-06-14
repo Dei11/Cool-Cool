@@ -1,3 +1,3 @@
 ## Cool-Cool
 
-![Desing](/images/Design.png "Design")
+![Desing](./images/Desing.png "Design")
