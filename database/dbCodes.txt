@@ -1,2 +1,3 @@
 
 create table users( id int(11) not null PRIMARY KEY AUTO_INCREMENT, uid TINYTEXT not null, emailUser TINYTEXT not null, pwdUser LONGTEXT not null );
+INSERT INTO users (uid, emailUser, pwdUser) VALUES ('$user_uid', '$user_email', '$user_pwd');

@@ -45,7 +45,7 @@
                         </div>
 
                         <!-- Submit button -->
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">Sing Up</button>
+                        <input type="submit" name="submit" id="submit" class="btn btn-primary btn-lg btn-block" />
 
                         <br />
                         <br />
