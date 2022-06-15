@@ -29,7 +29,6 @@ if (isset($_POST['login'])) {
                     session_start();
                     $_SESSION['id'] = $row['id'];
                     $_SESSION['uid'] = $row['uid'];
-                    //$_SESSION['email'] = $row['emailUser'];
                     header("Location: ../index.php?login=success");
                 } else {
                     header("Location: ../log-in.php?error=wrongpwd");
