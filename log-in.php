@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -18,21 +23,21 @@
                     <img src="./images/Logo.png" class="img-fluid" alt="Phone image">
                 </div>
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                    <form>
-                        <!-- Email input -->
+                    <form method="post" action="./database/login.inc.php">
+                        <!-- Email or UID input -->
                         <div class="form-outline mb-4">
-                            <input type="email" id="form1Example13" class="form-control form-control-lg" />
-                            <label class="form-label" for="form1Example13">Email address</label>
+                            <input type="text" name="mailuid" class="form-control form-control-lg" />
+                            <label class="form-label" for="form1Example13">Email address or user name</label>
                         </div>
 
                         <!-- Password input -->
                         <div class="form-outline mb-4">
-                            <input type="password" id="form1Example23" class="form-control form-control-lg" />
+                            <input type="password" name="password" class="form-control form-control-lg" />
                             <label class="form-label" for="form1Example23">Password</label>
                         </div>
 
                         <!-- Submit button -->
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">Log In</button>
+                        <input type="submit" name="login" id="login" class="btn btn-primary btn-lg btn-block" />
 
                         <div class="divider d-flex align-items-center my-4">
                             <p class="text-center fw-bold mx-3 mb-0 text-muted">Create new account</p>
