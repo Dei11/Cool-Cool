@@ -22,9 +22,46 @@ if (isset($_POST['submit'])) {
         exit();
     } else {
 
-        $sql = "SELECT uidUsers FROM users WHERE uidUsers=?";
+        $sql = "SELECT uid FROM users WHERE uid=?";
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            header("Location: sing-up.php?error=sqlerror");
+            exit();
+        } else {
+            mysqli_stmt_bind_param($stmt, "s", $user_uid);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_store_result($stmt);
+            $resultCheck = mysqli_stmt_num_rows($stmt);
+            if ($resultCheck > 0) {
+                header("Location: sing-up.php?error=usertaken&email=" . $user_email);
+                exit();
+            } else {
+                $sql = "INSERT INTO users (uid, emailUser, pwdUser) VALUES (?, ?, ?);";
+                $stmt = mysqli_stmt_init($conn);
+                if (!mysqli_stmt_prepare($stmt, $sql)) {
+                    header("Location: sing-up.php?error=sqlerror");
+                    exit();
+                } else {
 
-        mysqli_query($conn, $sql);
-        // header("Location: ./cool-app/index.php");
+                    mysqli_stmt_bind_param($stmt, "sss", $user_uid, $user_email, $user_pwd);
+                    mysqli_stmt_execute($stmt);
+                    mysqli_stmt_store_result($stmt);
+                    header("Location: ../log-in.php");
+                    exit();
+                }
+
+                // mysqli_query($conn, $sql);
+                // header("Location: sign-in.php");
+                // exit();
+            }
+        }
+        // mysqli_query($conn, $sql);
+        // // header("Location: ./cool-app/index.php");
     }
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+} else {
+    header("Location: ../sing-up.php");
+    exit();
 }
